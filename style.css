@@ -1,0 +1,30 @@
+div{
+    display: table;
+    margin: auto;
+}
+table{
+    border: solid #cc17f0;
+    border-collapse: collapse;
+}
+
+.button{
+    background-color: #cc17f0;
+    color: rgb(255, 255, 255);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: #2517f0;
+    color: rgb(255, 255, 255);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+img{
+    width: 150px;
+}
+
