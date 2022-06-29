@@ -1,12 +1,12 @@
 let piezas = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
 let num_click=0;
 let primerClick;
-console.log(piezas);
+//console.log(piezas);
 function desordenar(){
     piezas = piezas.sort(function(){
         return Math.random() - 0.5;
     })
-    console.log(piezas);
+    //console.log(piezas);
 }
 
 function desmarcarTodo(){
@@ -18,7 +18,7 @@ function desmarcarTodo(){
 
 function seleccionar(casilla){
     num_click = num_click + 1; //contabiliza los clicks
-    console.log("numero click=" + num_click);
+    //console.log("numero click=" + num_click);
     
 
 
@@ -26,20 +26,20 @@ function seleccionar(casilla){
         primerClick = casilla;
         desmarcarTodo();
         document.getElementById("img_"+casilla).style.border = "solid 2px blue";
-        console.log("memoriza el primer click" + primerClick);
+        //console.log("memoriza el primer click" + primerClick);
         
     }
     
 
     if(num_click == 2){
         var segundoClick = casilla;
-        console.log("antes del intercambio" + piezas);
+        //console.log("antes del intercambio" + piezas);
         //intercambiar posiciones
         let contenido = piezas[primerClick]; //guardar contenido
         piezas[primerClick] = piezas[segundoClick];
         //intercambio segundo y primero
         piezas[segundoClick] = contenido;
-        console.log("despues" + piezas);
+        //console.log("despues" + piezas);
 
         num_click = 0 //volver a 0
 
@@ -55,20 +55,20 @@ function seleccionar(casilla){
 let btn = document.querySelector("#btnComprobar");
 
 btn.addEventListener("click",(event)=>{
-    comprobarPuzzle()
+    comprobarPuzzle();
 })
 function comprobarPuzzle(){
     let correcto = true;
     for(let i=0; i<=14; i++){
         if(piezas[i] !=i){
             correcto = false;
-            console.log("?????????? po k")
+            //console.log("?????????? po k")
         }
     }
     if(correcto==true){
-        alert("correcto");
+        alert("Has completado el puzzle de Chika Fujiwara");
     }else{
-        alert("incompleto")
+        alert("Lo siento, esta incompleto, sigue intentando");
     }
 }
 
@@ -80,5 +80,5 @@ function refrescarPuzzle(){
 
 }
 
-desordenar()
-refrescarPuzzle()
+desordenar();
+refrescarPuzzle();
